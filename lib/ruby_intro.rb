@@ -79,14 +79,39 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  if s.length() < 1
+    return false
+  elsif /[^aeiouAEIOU\W]/.match(s[0]) != nil
+    return true
+  end
+  
+  return false
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if s.length() == 1 && s[0] == '0'
+    return true
+  end
+  
+  if /^[0-1]+$/.match(s) == nil
+    return false
+  end
+  
+  if /^[0]+$/.match(s) != nil
+    return false
+  end
+  
+  if /^[0-1]*1$/.match(s) != nil
+    return false
+  end
+  
+  return true
 end
 
 # Part 3
